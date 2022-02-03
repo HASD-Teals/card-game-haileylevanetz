@@ -54,6 +54,12 @@ public class Card {
     public void setSuit (String suit){
         this.suit= suit;
     }
+    public void setValue (int value){
+        this.value=value;
+    }
+    public void playable (boolean playable){
+        this.playable= playable;
+    }
 
     // METHODS
         public String toString(){
