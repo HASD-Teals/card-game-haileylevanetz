@@ -25,7 +25,6 @@ public class Deck {
                 }
                 Card temp= new Card("red", rank, "\u0003", i, true);
                 if(counter>10){
-                    //temp[i].setValue()=10;
                 }
                 cards[i-1]=temp;
                 counter++;
@@ -55,7 +54,8 @@ public class Deck {
                 counter++;
                    
     }
-            for(int i=14; i<27; i++){
+            counter= 1;
+            for(int i=27; i<40; i++){
                     
                 if(counter==1){
                 rank="A";
@@ -72,17 +72,45 @@ public class Deck {
                 if(counter==13){
                     rank="K";
                 }
-                Card temp= new Card("red", rank, "\u0004", i, true);
-                temp.setValue(i-13);
+                Card temp= new Card("black", rank, "\u0005", i, true);
+                temp.setValue(i-26);
                 cards[i-1]=temp;
                 counter++;
                 
         }
+        counter= 1;
+        for(int i=40; i<53; i++){
+                
+            if(counter==1){
+            rank="A";
+            }
+            if(counter>=2 && counter<11){
+                rank= ""+ counter;
+            }
+            if(counter==11){
+                rank="J";
+            }
+            if(counter==12){
+                rank="Q";
+            }
+            if(counter==13){
+                rank="K";
+            }
+            Card temp= new Card("black", rank, "\u0006", i, true);
+            temp.setValue(i-39);
+            cards[i-1]=temp;
+            counter++;
+            
+    }
 }
 
     // ACCESSORS
     public Card[] getCards() {
         return this.cards;
+    }
+    public int getLength(Deck hi){
+        Card[] smelly= hi.getCards();
+        return smelly.length;
     }
 
     // MUTATORS
@@ -91,7 +119,11 @@ public class Deck {
     }
 
     // METHODS
-    public void shuffleCards() {
-        // Shuffle this.cards in a random order
+    public void shuffleCards(Deck cards) {
+        Card[] smelly = cards.getCards();
+        for (int i = 0; i <smelly.length; i++) {
+            int j = (int)(Math.random() * smelly.length); 
+            smelly[j] = smelly[i];
+        }
     }
 }
