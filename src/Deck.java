@@ -110,9 +110,11 @@ public class Deck {
     public Card[] getCards() {
         return this.cards;
     }
-    public int getLength(Deck hi){
-        Card[] smelly= hi.getCards();
-        return smelly.length;
+    public Card getCard (int n){
+        return this.cards[n];
+    }
+    public int getLength(){
+        return this.cards.length;
     }
 
     // MUTATORS
@@ -122,10 +124,17 @@ public class Deck {
 
     // METHODS
     public void shuffleCards() {
-        List<Card> shuffled = Arrays.asList(this.cards);
-        Collections.shuffle(shuffled);
-        
+        Card[] smelly = this.cards;
+        Card temp= new Card();
+        for (int i = 0; i <smelly.length; i++) {
+            int j = (int)(Math.random() * smelly.length);
+            temp=smelly[j];
+            smelly[j] = smelly[i];
+            smelly[i]= temp;
+        }
     }
+    
+
 }
 
 // Card[] smelly = this.cards;
