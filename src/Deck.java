@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Deck {
     // PROPERTIES
     private Card[] cards;
@@ -119,11 +121,17 @@ public class Deck {
     }
 
     // METHODS
-    public void shuffleCards(Deck cards) {
-        Card[] smelly = cards.getCards();
-        for (int i = 0; i <smelly.length; i++) {
-            int j = (int)(Math.random() * smelly.length); 
-            smelly[j] = smelly[i];
-        }
+    public void shuffleCards() {
+        List<Card> shuffled = Arrays.asList(this.cards);
+        Collections.shuffle(shuffled);
+        
     }
 }
+
+// Card[] smelly = this.cards;
+// Card[] temp = new Card[52];
+// for (int i = 0; i <smelly.length; i++) {
+//     int j = (int)(Math.random() * smelly.length); 
+//     temp[i] = smelly[j];
+// }
+// this.cards = temp;

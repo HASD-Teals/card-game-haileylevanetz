@@ -2,7 +2,7 @@ public class CardGameClient {
     public static void main(String[] args) throws Exception {
         Deck deck1= new Deck();
         printer(deck1);
-        deck1.shuffleCards(deck1);
+        deck1.shuffleCards();
         System.out.print(deck1.getLength(deck1));
         System.out.println("\n \n \n");
         printer(deck1);
