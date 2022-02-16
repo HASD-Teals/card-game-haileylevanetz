@@ -11,6 +11,9 @@ public class CardGameClient {
         deck2.shuffleCards();
         deck2.shuffleCards();
         matches(deck1, deck2);
+        Deck player = new Deck();
+        Deck computer = new Deck();
+        System.out.println("The computer drew a: " + computer.drawCard());
         
         
     }
@@ -34,5 +37,6 @@ public class CardGameClient {
             System.out.println("You have no matches loser!");
         }
     }
+
     
 }

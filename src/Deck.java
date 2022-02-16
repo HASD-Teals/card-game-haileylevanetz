@@ -133,6 +133,12 @@ public class Deck {
             smelly[i]= temp;
         }
     }
+    public String drawCard (){
+        int j = (int)(Math.random() * this.cards.getLength());
+     Card draw= this.cards.getCard(j);
+     String bean= (""+ draw.getRank() + draw.getSuit());
+     return bean;
+    }
     
 
 }
