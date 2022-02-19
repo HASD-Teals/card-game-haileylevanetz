@@ -1,3 +1,8 @@
+/**
+ * Nice work. See the comments on Deck.java line 140.
+ * - Mr. Smith
+ */
+
 public class CardGameClient {
     public static void main(String[] args) throws Exception {
         Deck deck1= new Deck();
